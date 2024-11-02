@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useSelector } from "react-redux";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Dashboard = () => {
@@ -10,6 +10,8 @@ const Dashboard = () => {
   const token = useSelector((state) => state.user.token);
 
   useEffect(() => {
+    if (!token) return;
+
     const fetchCounts = async () => {
       try {
         const config = {
@@ -27,16 +29,22 @@ const Dashboard = () => {
         setTicketCount(ticketRes.data.count);
         setUserCount(userRes.data.count);
       } catch (error) {
-        toast.error("Error fetching counts. Please try again later.");
+        if (error.response) {
+          toast.error(
+            `Error: ${error.response.data.message || "Fetching counts failed"}`
+          );
+        } else {
+          toast.error("Error fetching counts. Please try again later.");
+        }
         console.error("Error fetching counts", error);
       }
     };
+
     fetchCounts();
   }, [token]);
 
   return (
     <div className="flex items-center justify-center h-screen bg-gradient-to-r from-indigo-900 via-purple-800 to-pink-900">
-      <ToastContainer position="top-right" autoClose={3000} hideProgressBar />
       <div className="text-center space-y-10">
         <h1 className="md:text-5xl text-3xl font-bold text-white tracking-wider mb-6">
           Dashboard
