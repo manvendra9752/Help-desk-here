@@ -1,0 +1,163 @@
+import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faTicketAlt,
+  faPlusCircle,
+  faUser,
+  faThLarge,
+  faSignInAlt,
+} from "@fortawesome/free-solid-svg-icons";
+
+import image from "../assets/image.png";
+import { useEffect } from "react";
+
+const Menu = () => {
+  const role = useSelector((state) => state.user.role);
+  useEffect(() => {}, [role]);
+
+  return (
+    <div className="fixed bg-gray-900 text-white w-36 md:w-64 h-screen md:p-6 p-1">
+      <img className="p-4 mb-10" src={image} alt="image helpdesk" />
+
+      <ul className="space-y-4">
+        {role === "customer" && (
+          <>
+            <li>
+              <NavLink
+                to="/tickets"
+                className={({ isActive }) =>
+                  `flex items-center p-3 rounded-md transition-colors ${
+                    isActive
+                      ? "bg-blue-600 text-white"
+                      : "hover:bg-blue-500 hover:text-white"
+                  }`
+                }
+              >
+                <FontAwesomeIcon icon={faTicketAlt} className="mr-3" />
+                <span>My Tickets</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/user/add-ticket"
+                className={({ isActive }) =>
+                  `flex items-center p-3 rounded-md transition-colors ${
+                    isActive
+                      ? "bg-blue-600 text-white"
+                      : "hover:bg-blue-500 hover:text-white"
+                  }`
+                }
+              >
+                <FontAwesomeIcon icon={faPlusCircle} className="mr-3" />
+                <span>Add Ticket</span>
+              </NavLink>
+            </li>
+          </>
+        )}
+        {role === "agent" && (
+          <li>
+            <NavLink
+              to="/tickets"
+              className={({ isActive }) =>
+                `flex items-center p-3 rounded-md transition-colors ${
+                  isActive
+                    ? "bg-blue-600 text-white"
+                    : "hover:bg-blue-500 hover:text-white"
+                }`
+              }
+            >
+              <FontAwesomeIcon icon={faTicketAlt} className="mr-3" />
+              <span>View All Tickets</span>
+            </NavLink>
+          </li>
+        )}
+        {role === "admin" && (
+          <>
+            <li>
+              <NavLink
+                to="/customers"
+                className={({ isActive }) =>
+                  `flex items-center p-3 rounded-md transition-colors ${
+                    isActive
+                      ? "bg-blue-600 text-white"
+                      : "hover:bg-blue-500 hover:text-white"
+                  }`
+                }
+              >
+                <FontAwesomeIcon icon={faUser} className="mr-3" />
+                <span>Manage Customers</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/tickets"
+                className={({ isActive }) =>
+                  `flex items-center p-3 rounded-md transition-colors ${
+                    isActive
+                      ? "bg-blue-600 text-white"
+                      : "hover:bg-blue-500 hover:text-white"
+                  }`
+                }
+              >
+                <FontAwesomeIcon icon={faTicketAlt} className="mr-3" />
+                <span>View All Tickets</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/dashboard"
+                className={({ isActive }) =>
+                  `flex items-center p-3 rounded-md transition-colors ${
+                    isActive
+                      ? "bg-blue-600 text-white"
+                      : "hover:bg-blue-500 hover:text-white"
+                  }`
+                }
+              >
+                <FontAwesomeIcon icon={faThLarge} className="mr-3" />
+                <span>Dashboard</span>
+              </NavLink>
+            </li>
+          </>
+        )}
+        {!role && (
+          <>
+            <li>
+              <NavLink
+                to="/login"
+                className={({ isActive }) =>
+                  `flex items-center p-3 rounded-md transition-colors ${
+                    isActive
+                      ? "bg-blue-600 text-white"
+                      : "hover:bg-blue-500 hover:text-white"
+                  }`
+                }
+              >
+                <FontAwesomeIcon icon={faSignInAlt} className="mr-3" />
+                <span>Login</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/register"
+                className={({ isActive }) =>
+                  `flex items-center p-3 rounded-md transition-colors ${
+                    isActive
+                      ? "bg-blue-600 text-white"
+                      : "hover:bg-blue-500 hover:text-white"
+                  }`
+                }
+              >
+                <FontAwesomeIcon icon={faUser} className="mr-3" />
+                <span>Register</span>
+              </NavLink>
+            </li>
+          </>
+        )}
+      </ul>
+    </div>
+  );
+};
+
+export default Menu;
