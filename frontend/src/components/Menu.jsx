@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTicketAlt,
@@ -14,15 +14,7 @@ import { useEffect } from "react";
 
 const Menu = () => {
   const role = useSelector((state) => state.user.role);
-  const dispatch = useDispatch();
 
-  useEffect(() => {
-    // Re-render the component whenever role changes
-    if (!role) {
-      console.log("User is logged out, re-rendering the menu");
-      // You could also dispatch actions or trigger effects based on role changes
-    }
-  });
   return (
     <div className="fixed bg-gray-900 text-white w-28 md:w-64 h-screen md:p-6 p-1">
       <img className="p-4 mb-10" src={image} alt="Helpdesk Logo" />
@@ -161,6 +153,11 @@ const Menu = () => {
                 <span>Register</span>
               </NavLink>
             </li>
+            <p className="text-red-300 text-sm">
+              🙏 Apologies for the delay in loading on Render/Vercel. If login
+              or register doesn’t respond right away, please refresh and try
+              again it will run properly at second time.
+            </p>
           </>
         )}
       </ul>
