@@ -24,7 +24,7 @@ function App() {
 
         <div className="flex">
           <Menu />
-          <div className="md:ml-64 ml-36 flex-grow md:p-4 p-2">
+          <div className="md:ml-64 ml-28 flex-grow md:p-4 p-2">
             <Routes>
               <Route path="/tickets" element={<Tickets />} />
               <Route path="/user/add-ticket" element={<AddTicket />} />
