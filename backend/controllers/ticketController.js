@@ -7,7 +7,7 @@ exports.createTicket = async (req, res) => {
     const ticket = new Ticket({
       title,
       customer: req.user.id,
-      status: "Active",
+      status: "Pending",
     });
     await ticket.save();
     res.status(201).json({ success: true, ticket });
