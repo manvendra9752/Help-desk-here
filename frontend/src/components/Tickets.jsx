@@ -32,10 +32,13 @@ const Tickets = () => {
       const res =
         role === "customer"
           ? await axios.get(
-              `http://localhost:5000/api/tickets/user/${userid}`,
+              `https://help-desk-here.onrender.com/api/tickets/user/${userid}`,
               config
             )
-          : await axios.get("http://localhost:5000/api/tickets", config);
+          : await axios.get(
+              "https://help-desk-here.onrender.com/api/tickets",
+              config
+            );
       if (res.data.success) {
         dispatch(setTickets(res.data.tickets));
       }
@@ -56,7 +59,7 @@ const Tickets = () => {
     setLoadingDetails(true);
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/tickets/notes/${ticketId}`,
+        `https://help-desk-here.onrender.com/api/tickets/notes/${ticketId}`,
         config
       );
       if (res.data.success) {
@@ -94,7 +97,7 @@ const Tickets = () => {
     const config = { headers: { Authorization: token } };
     try {
       const res = await axios.post(
-        `http://localhost:5000/api/tickets/${expandedTicketId}/notes`,
+        `https://help-desk-here.onrender.com/api/tickets/${expandedTicketId}/notes`,
         newNote,
         config
       );
@@ -116,7 +119,7 @@ const Tickets = () => {
     const config = { headers: { Authorization: token } };
     try {
       const res = await axios.patch(
-        `http://localhost:5000/api/tickets/${ticketId}`,
+        `https://help-desk-here.onrender.com/api/tickets/${ticketId}`,
         { status: newStatus },
         config
       );

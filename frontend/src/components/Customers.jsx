@@ -14,7 +14,7 @@ const Customers = () => {
   });
   const [isEditing, setIsEditing] = useState(false);
   const token = useSelector((state) => state.user.token);
-  const baseURL = "http://localhost:5000/api/auth";
+  const baseURL = "https://help-desk-here.onrender.com/api/auth";
 
   const fetchCustomers = async () => {
     try {

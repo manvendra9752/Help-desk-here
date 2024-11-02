@@ -23,7 +23,7 @@ const AddTicket = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/tickets",
+        "https://help-desk-here.onrender.com/api/tickets",
         newTicket,
         config
       );

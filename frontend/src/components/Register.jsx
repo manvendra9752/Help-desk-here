@@ -19,12 +19,15 @@ const Register = () => {
     setError("");
 
     try {
-      await axios.post("http://localhost:5000/api/auth/register", {
-        name,
-        email,
-        password,
-        role,
-      });
+      await axios.post(
+        "https://help-desk-here.onrender.com/api/auth/register",
+        {
+          name,
+          email,
+          password,
+          role,
+        }
+      );
       toast.success("Registration successful!"); // Success toast
       navigate("/login");
     } catch (err) {

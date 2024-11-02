@@ -16,11 +16,11 @@ const Dashboard = () => {
           headers: { Authorization: token },
         };
         const userRes = await axios.get(
-          "http://localhost:5000/api/users/count",
+          "https://help-desk-here.onrender.com/api/users/count",
           config
         );
         const ticketRes = await axios.get(
-          "http://localhost:5000/api/count/tickets",
+          "https://help-desk-here.onrender.com/api/count/tickets",
           config
         );
 

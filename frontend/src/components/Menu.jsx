@@ -9,12 +9,11 @@ import {
   faSignInAlt,
 } from "@fortawesome/free-solid-svg-icons";
 
-import image from "../assets/image.png";
+import image from "../assets/imagemenu.png";
 import { useEffect } from "react";
 
 const Menu = () => {
   const role = useSelector((state) => state.user.role);
-  useEffect(() => {}, [role]);
 
   return (
     <div className="fixed bg-gray-900 text-white w-36 md:w-64 h-screen md:p-6 p-1">
