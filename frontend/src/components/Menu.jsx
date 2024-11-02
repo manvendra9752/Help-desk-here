@@ -10,7 +10,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import image from "../assets/imagemenu.png";
-import { useEffect } from "react";
 
 const Menu = () => {
   const role = useSelector((state) => state.user.role);
@@ -20,7 +19,6 @@ const Menu = () => {
       <img className="p-4 mb-10" src={image} alt="Helpdesk Logo" />
 
       <ul className="space-y-4">
-        {/* Menu options based on role */}
         {role === "customer" && (
           <>
             <li>
@@ -153,11 +151,6 @@ const Menu = () => {
                 <span>Register</span>
               </NavLink>
             </li>
-            <p className="text-red-300 text-sm">
-              🙏 Apologies for the delay in loading on Render/Vercel. If login
-              or register doesn’t respond right away, please refresh and try
-              again it will run properly at second time.
-            </p>
           </>
         )}
       </ul>

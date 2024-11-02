@@ -3,7 +3,7 @@ import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import { addTicket } from "../redux/ticketSlice";
 import { useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const AddTicket = () => {
@@ -45,7 +45,6 @@ const AddTicket = () => {
 
   return (
     <div className="p-8 max-w-7xl mx-auto bg-gray-800 shadow-lg rounded-lg">
-      <ToastContainer position="top-right" autoClose={3000} hideProgressBar />
       <h1 className="text-3xl font-bold mb-6 text-center text-blue-400">
         Add New Ticket
       </h1>

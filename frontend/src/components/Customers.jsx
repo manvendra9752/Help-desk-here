@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Customers = () => {
@@ -79,7 +79,6 @@ const Customers = () => {
 
   return (
     <div className="p-6 max-w-7xl mx-auto bg-gray-900 text-gray-200 shadow-lg rounded-lg">
-      <ToastContainer position="top-right" autoClose={3000} hideProgressBar />
       <h1 className="text-2xl font-bold mb-4 text-center text-blue-400">
         Customers Management
       </h1>
