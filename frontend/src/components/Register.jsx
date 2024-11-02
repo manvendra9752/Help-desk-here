@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -105,7 +105,7 @@ const Register = () => {
         </form>
         <p className="mt-6 text-center text-gray-400">
           Already have an account?{" "}
-          <span className="text-blue-400 hover:underline">Login</span>
+          <Link className="text-blue-400 hover:underline">Login here</Link>
         </p>
       </div>
     </div>

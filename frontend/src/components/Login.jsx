@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import { setUserRole } from "../redux/userSlice";
@@ -91,7 +91,9 @@ const Login = () => {
         </form>
         <p className="mt-6 text-center text-gray-400">
           Don't have an account?{" "}
-          <span className="text-blue-400 hover:underline">Register</span>
+          <Link href="/register" className="text-blue-400 hover:underline">
+            Register here
+          </Link>
         </p>
       </div>
     </div>
