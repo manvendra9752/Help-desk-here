@@ -10,12 +10,12 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [role, setRole] = useState("customer");
-  const [loading, setLoading] = useState(false); // Add loading state
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleRegister = async (e) => {
     e.preventDefault();
-    setLoading(true); // Start loading
+    setLoading(true);
     setError("");
 
     try {
@@ -28,14 +28,12 @@ const Register = () => {
           role,
         }
       );
-      toast.success("Registration successful!"); // Success toast
+      toast.success("Registration successful!");
       navigate("/login");
     } catch (err) {
-      setLoading(false); // Stop loading
+      setLoading(false);
       setError("Registration failed. Please try again.");
-      toast.error("Registration failed. Please try again."); // Error toast
-    } finally {
-      setLoading(false); // Ensure loading is stopped on completion
+      toast.error("Registration failed. Please try again.");
     }
   };
 

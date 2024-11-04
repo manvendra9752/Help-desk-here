@@ -51,7 +51,6 @@ const Dashboard = () => {
         </h1>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 px-6 max-w-3xl">
-          {/* Ticket Count */}
           <div className="p-8 rounded-2xl bg-indigo-700 shadow-2xl shadow-indigo-900 transform transition duration-500 hover:scale-105 hover:bg-indigo-800">
             <p className="text-lg font-medium text-indigo-100">Total Tickets</p>
             <p className="text-6xl font-extrabold text-white mt-4">
@@ -59,7 +58,6 @@ const Dashboard = () => {
             </p>
           </div>
 
-          {/* User Count */}
           <div className="p-8 rounded-2xl bg-purple-700 shadow-2xl shadow-purple-900 transform transition duration-500 hover:scale-105 hover:bg-purple-800">
             <p className="text-lg font-medium text-purple-100">Total Users</p>
             <p className="text-6xl font-extrabold text-white mt-4">

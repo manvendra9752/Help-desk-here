@@ -12,7 +12,7 @@ const Home = () => {
           <h1 className="md:text-4xl text-3xl font-bold md:mb-4 mb-2">
             Welcome to the Helpdesk
           </h1>
-          <p className="mb-8">Your go-to solution for all support needs.</p>
+          <p className="mb-8 p-2">Your go-to solution for all support needs.</p>
           {!userToken && (
             <Link
               to="/register"

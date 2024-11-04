@@ -146,8 +146,8 @@ const Tickets = () => {
   };
 
   return (
-    <div className="p-6 max-w-7xl mx-auto bg-gray-900 text-gray-200 shadow-lg rounded-lg">
-      <h1 className="text-3xl font-bold mb-6 text-center text-blue-400">
+    <div className="md:p-6 p-2 max-w-7xl mx-auto bg-gray-900 text-gray-200 shadow-lg rounded-lg">
+      <h1 className="md:text-3xl text-xl font-bold mb-6 text-center text-blue-400">
         Support Tickets
       </h1>
       {loading ? (
@@ -161,14 +161,14 @@ const Tickets = () => {
           {tickets.map((ticket) => (
             <li
               key={ticket._id}
-              className="p-4 transition-colors duration-200 flex flex-col"
+              className="md:p-4 p-1 transition-colors duration-200 flex flex-col"
             >
               <div className="flex justify-between items-center cursor-pointer p-2 rounded-lg">
                 <div>
-                  <h2 className="font-semibold text-lg my-1 text-gray-100">
+                  <h2 className="font-semibold md:text-lg text-sm my-1 text-gray-100">
                     {ticket.title}
                   </h2>
-                  <p className="text-sm text-gray-400 my-1">
+                  <p className="md:text-sm text-xs text-gray-400 my-1">
                     Created on:{" "}
                     <span className="text-gray-300">
                       {formatDate(ticket.lastUpdated)}
@@ -194,15 +194,24 @@ const Tickets = () => {
                       onChange={(e) =>
                         handleStatusChange(ticket._id, e.target.value)
                       }
-                      className="mt-3 p-2 px-3 border rounded-lg text-pink-200 bg-gray-800 hover:bg-gray-700"
+                      className="mt-3 p-2 px-3 md:text-lg text-sm  border rounded-lg text-pink-200 bg-gray-800 hover:bg-gray-700"
                     >
-                      <option value="Active" className="text-green-400">
+                      <option
+                        value="Active"
+                        className="text-green-400 md:text-lg text-sm "
+                      >
                         Active
                       </option>
-                      <option value="Pending" className="text-blue-400">
+                      <option
+                        value="Pending"
+                        className="text-blue-400md:text-lg text-sm "
+                      >
                         Pending
                       </option>
-                      <option value="Closed" className="text-red-500">
+                      <option
+                        value="Closed"
+                        className="text-red-500 md:text-lg text-sm "
+                      >
                         Closed
                       </option>
                     </select>

@@ -16,7 +16,7 @@ const Menu = () => {
 
   return (
     <div className="fixed bg-gray-900 text-white w-28 md:w-64 h-screen md:p-6 p-1">
-      <img className="p-4 mb-10" src={image} alt="Helpdesk Logo" />
+      <img className="md:p-4 p-2 mb-10" src={image} alt="Helpdesk Logo" />
 
       <ul className="space-y-4">
         {role === "customer" && (
@@ -32,8 +32,8 @@ const Menu = () => {
                   }`
                 }
               >
-                <FontAwesomeIcon icon={faTicketAlt} className="mr-3" />
-                <span>My Tickets</span>
+                <FontAwesomeIcon icon={faTicketAlt} className="mr-1 md:mr-3" />
+                <span className="md:text-xl text-xs">My Tickets</span>
               </NavLink>
             </li>
             <li>
@@ -47,8 +47,8 @@ const Menu = () => {
                   }`
                 }
               >
-                <FontAwesomeIcon icon={faPlusCircle} className="mr-3" />
-                <span>Add Ticket</span>
+                <FontAwesomeIcon icon={faPlusCircle} className="mr-1 md:mr-3" />
+                <span className="md:text-xl text-xs">Add Ticket</span>
               </NavLink>
             </li>
           </>
@@ -65,8 +65,8 @@ const Menu = () => {
                 }`
               }
             >
-              <FontAwesomeIcon icon={faTicketAlt} className="mr-3" />
-              <span>View All Tickets</span>
+              <FontAwesomeIcon icon={faTicketAlt} className="mr-1 md:mr-3" />
+              <span className="md:text-xl text-xs">View All Tickets</span>
             </NavLink>
           </li>
         )}
@@ -83,8 +83,8 @@ const Menu = () => {
                   }`
                 }
               >
-                <FontAwesomeIcon icon={faUser} className="mr-3" />
-                <span>Manage Customers</span>
+                <FontAwesomeIcon icon={faUser} className="mr-1 md:mr-3" />
+                <span className="md:text-xl text-xs">Manage Customers</span>
               </NavLink>
             </li>
             <li>
@@ -98,8 +98,8 @@ const Menu = () => {
                   }`
                 }
               >
-                <FontAwesomeIcon icon={faTicketAlt} className="mr-3" />
-                <span>View All Tickets</span>
+                <FontAwesomeIcon icon={faTicketAlt} className="mr-1 md:mr-3" />
+                <span className="md:text-xl text-xs">View All Tickets</span>
               </NavLink>
             </li>
             <li>
@@ -113,8 +113,8 @@ const Menu = () => {
                   }`
                 }
               >
-                <FontAwesomeIcon icon={faThLarge} className="mr-3" />
-                <span>Dashboard</span>
+                <FontAwesomeIcon icon={faThLarge} className="mr-1 md:mr-3" />
+                <span className="md:text-xl text-xs">Dashboard</span>
               </NavLink>
             </li>
           </>
@@ -133,7 +133,7 @@ const Menu = () => {
                 }
               >
                 <FontAwesomeIcon icon={faSignInAlt} className="mr-3" />
-                <span>Login</span>
+                <span className="md:text-xl text-xs">Login</span>
               </NavLink>
             </li>
             <li>
@@ -148,7 +148,7 @@ const Menu = () => {
                 }
               >
                 <FontAwesomeIcon icon={faUser} className="mr-3" />
-                <span>Register</span>
+                <span className="md:text-xl text-xs">Register</span>
               </NavLink>
             </li>
           </>

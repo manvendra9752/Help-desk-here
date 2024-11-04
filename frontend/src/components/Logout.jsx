@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { logoutUser } from "../redux/userSlice";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Logout = () => {
@@ -11,17 +11,13 @@ const Logout = () => {
 
   useEffect(() => {
     dispatch(logoutUser());
-    toast.success("Successfully logged out!");
     navigate("/login");
+    toast.success("Successfully logged out!");
+
     window.location.reload();
   }, [dispatch, navigate]);
 
-  return (
-    <>
-      <ToastContainer position="top-right" autoClose={3000} hideProgressBar />
-      {null}
-    </>
-  );
+  return <>{null}</>;
 };
 
 export default Logout;

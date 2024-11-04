@@ -38,7 +38,6 @@ const AddTicket = () => {
     } catch (error) {
       console.error("Error adding ticket:", error);
       toast.error("Error adding ticket. Please try again.");
-    } finally {
       setLoading(false);
     }
   };
