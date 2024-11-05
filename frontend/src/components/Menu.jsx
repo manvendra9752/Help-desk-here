@@ -151,6 +151,10 @@ const Menu = () => {
                 <span className="md:text-xl text-xs">Register</span>
               </NavLink>
             </li>
+            <p className="text-xs p-3 text-red-300">
+              ⏳ The first loading may take between 50 seconds to 1 minute due
+              to RENDER deploy. Thank you for your patience! 😊
+            </p>
           </>
         )}
       </ul>
