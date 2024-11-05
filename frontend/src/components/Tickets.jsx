@@ -134,6 +134,25 @@ const Tickets = () => {
     }
   };
 
+  const handleDeleteNote = async (noteId) => {
+    try {
+      const response = await axios.delete(
+        `https://help-desk-here.onrender.com/api/tickets/note/delete/${noteId}`,
+        {
+          headers: { Authorization: token },
+        }
+      );
+      if (response.data.success) {
+        fetchTicketDetails(expandedTicketId);
+        toast.success("Note deleted successfully.");
+      } else {
+        toast.error("Error deleting note.");
+      }
+    } catch (error) {
+      console.error("Error deleting note:", error);
+    }
+  };
+
   const formatDate = (dateString) => {
     const options = {
       year: "numeric",
@@ -290,6 +309,14 @@ const Tickets = () => {
                           <small className="text-gray-300">
                             {note.role} on {formatDate(note.createdAt)}
                           </small>
+                          {/* {role === "admin" && ( */}
+                          <button
+                            onClick={() => handleDeleteNote(note._id)}
+                            className="text-white ml-2 bg-red-500 rounded px-4 py-1 text-xs hover:bg-white hover:text-red-500 duration-300"
+                          >
+                            Delete
+                          </button>
+                          {/* )} */}
                         </li>
                       ))}
                     </ul>

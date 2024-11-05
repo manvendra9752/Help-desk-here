@@ -50,3 +50,17 @@ exports.getNotesByTicket = async (req, res) => {
     });
   }
 };
+
+exports.deleteNotesById = async (req, res) => {
+  try {
+    const { noteId } = req.params;
+    console.log(noteId);
+    const note = await Note.findByIdAndDelete(noteId);
+    if (!note)
+      return res.status(404).json({ success: false, msg: "Note not found" });
+
+    res.status(200).json({ success: true, msg: "Note deleted successfully" });
+  } catch (error) {
+    res.status(500).json({ success: false, msg: "Server error" });
+  }
+};

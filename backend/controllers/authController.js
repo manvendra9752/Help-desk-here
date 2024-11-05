@@ -128,7 +128,7 @@ exports.deleteCustomer = async (req, res) => {
     const { id } = req.params;
     console.log(id);
     const customer = await User.findByIdAndDelete(id);
-    console.log(customer);
+    // console.log(customer);
     if (!customer)
       return res
         .status(404)

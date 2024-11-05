@@ -1,6 +1,10 @@
 const express = require("express");
 const auth = require("../middleware/authMiddleware");
-const { addNote, getNotesByTicket } = require("../controllers/noteController");
+const {
+  addNote,
+  getNotesByTicket,
+  deleteNotesById,
+} = require("../controllers/noteController");
 const {
   createTicket,
   getTickets,
@@ -21,5 +25,8 @@ router.patch("/:id", auth(), updateTicketStatus);
 //notes
 router.post("/:ticketId/notes", auth(), addNote);
 router.get("/notes/:ticketId", auth(), getNotesByTicket);
+
+//notes
+router.delete("/note/delete/:noteId", auth(), deleteNotesById);
 
 module.exports = router;
